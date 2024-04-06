@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next";
 import { Film, People, Starship } from "@/types";
 import { fetchPerson, fetchFilm, fetchStarship } from "@/utils/api";
 import { getIdFromUrl } from "@/utils";
+import { Footer } from "@/components/Footer";
 
 const ProfilePage = ({
   person,
@@ -13,6 +14,12 @@ const ProfilePage = ({
   starships: Array<Starship>;
 }) => {
   console.log({ person, films, starships });
+
+  return (
+    <>
+      <Footer />
+    </>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

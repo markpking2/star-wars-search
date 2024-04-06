@@ -35,7 +35,6 @@ export const SearchBar = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Search for a Star Wars character"
-          bg={"white"}
         />
         <InputRightElement>
           {query.isLoading ? (
@@ -46,14 +45,7 @@ export const SearchBar = () => {
         </InputRightElement>
       </InputGroup>
       {query.isSuccess && (
-        <List
-          spacing={3}
-          mt={3}
-          bg={"white"}
-          p={3}
-          borderRadius="md"
-          boxShadow="md"
-        >
+        <List spacing={3} mt={3} p={3} borderRadius="md" boxShadow="md">
           {query.data.results.map((person) => (
             <PersonListItem
               key={person.name}
