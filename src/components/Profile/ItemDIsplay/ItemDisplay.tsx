@@ -25,7 +25,7 @@ export const ItemDisplay = ({
         gap={6}
       >
         {items.length > 0
-          ? items.map((item, i) => (
+          ? items.map((item) => (
               <Box
                 key={`${item.name}`}
                 p={5}
