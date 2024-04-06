@@ -31,6 +31,7 @@ export const SearchBar = () => {
     <Box w={"100%"} maxW={"400px"}>
       <InputGroup>
         <Input
+          onBlur={() => setInputValue("")}
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
