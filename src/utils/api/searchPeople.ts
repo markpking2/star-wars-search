@@ -1,4 +1,4 @@
-import { axiosClient } from "@/utils/api/axiosClient";
+import { axiosClient } from "@/utils/api";
 import { People } from "@/types";
 
 interface SearchPeopleResponse {
