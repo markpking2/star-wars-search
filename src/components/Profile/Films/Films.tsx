@@ -6,9 +6,9 @@ interface FilmsProps {
 }
 
 const renderFilmDetails = (film: Film) => [
-  rd("Release Date", film.release_date),
-  rd("Director", film.director),
-  rd("Producer(s)", film.producer),
+  rd("Release Date", film.release_date, film.url),
+  rd("Director", film.director, film.url),
+  rd("Producer(s)", film.producer, film.url),
 ];
 
 export const Films = ({ films }: FilmsProps) => {

@@ -6,10 +6,10 @@ interface StarshipsProps {
 }
 
 const renderStarshipDetails = (starship: Starship) => [
-  rd("Model", starship.model),
-  rd("Starship Class", starship.starship_class),
-  rd("Manufacturer", starship.manufacturer),
-  rd("Length", starship.length, (v) => `${v} m`),
+  rd("Model", starship.model, starship.url),
+  rd("Starship Class", starship.starship_class, starship.url),
+  rd("Manufacturer", starship.manufacturer, starship.url),
+  rd("Length", starship.length, starship.url, (v) => `${v} m`),
 ];
 
 export const Starships = ({ starships }: StarshipsProps) => {

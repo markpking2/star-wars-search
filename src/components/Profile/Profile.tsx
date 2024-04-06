@@ -21,15 +21,15 @@ const renderPersonDetails = ({
   person: People;
   species: Species[];
 }) => [
-  rd("Height", person.height, (v) => `${v} cm`),
-  rd("Weight", person.mass, (v) => `${v} kg`),
-  rd("Hair Color", person.hair_color, (v) =>
+  rd("Height", person.height, person.url, (v) => `${v} cm`),
+  rd("Weight", person.mass, person.url, (v) => `${v} kg`),
+  rd("Hair Color", person.hair_color, person.url, (v) =>
     v === "n/a"
       ? "No hair"
       : (v as string).charAt(0).toUpperCase() + v.slice(1),
   ),
-  rd("Date of Birth", person.birth_year),
-  rd("Species", species.map((s) => s.name).join(", ")),
+  rd("Date of Birth", person.birth_year, person.url),
+  rd("Species", person.url, species.map((s) => s.name).join(", ")),
 ];
 
 export const Profile = ({
