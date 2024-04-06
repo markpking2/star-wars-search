@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import { useDebounce } from "ahooks";
 import { useQuery } from "@tanstack/react-query";
-import { searchCharacter } from "@/utils/api";
+import { searchPeople } from "@/utils/api";
 import {
   Input,
   InputGroup,
   InputRightElement,
   Box,
   List,
-  ListItem,
-  ListIcon,
   Spinner,
   useColorModeValue,
   Icon,
 } from "@chakra-ui/react";
 import { FaSearch } from "react-icons/fa";
+import { PersonListItem } from "@/components/SearchBar/PersonListItem";
 
 export const SearchBar = () => {
   const [inputValue, setInputValue] = useState("");
@@ -22,7 +21,7 @@ export const SearchBar = () => {
 
   const query = useQuery({
     queryKey: ["searchCharacter", debouncedValue],
-    queryFn: () => searchCharacter(debouncedValue),
+    queryFn: () => searchPeople(debouncedValue),
     enabled: !!debouncedValue,
   });
 
@@ -55,11 +54,12 @@ export const SearchBar = () => {
           borderRadius="md"
           boxShadow="md"
         >
-          {query.data.results.map((character, index) => (
-            <ListItem key={index}>
-              <ListIcon as={FaSearch} color={searchIconColor} />
-              {character.name}
-            </ListItem>
+          {query.data.results.map((person) => (
+            <PersonListItem
+              key={person.name}
+              person={person}
+              searchIconColor={searchIconColor}
+            />
           ))}
         </List>
       )}
