@@ -29,7 +29,7 @@ const renderPersonDetails = ({
       : (v as string).charAt(0).toUpperCase() + v.slice(1),
   ),
   rd("Date of Birth", person.birth_year, person.url),
-  rd("Species", person.url, species.map((s) => s.name).join(", ")),
+  rd("Species", species.map((s) => s.name).join(", "), person.url),
 ];
 
 export const Profile = ({
@@ -38,6 +38,7 @@ export const Profile = ({
   starships,
   species,
 }: ProfileProps) => {
+  console.log(species);
   return (
     <Box>
       <ItemDisplay
