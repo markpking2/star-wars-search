@@ -28,7 +28,7 @@ export const SearchBar = () => {
   const searchIconColor = useColorModeValue("starWars.blue", "starWars.red");
 
   return (
-    <Box>
+    <Box w={"100%"} maxW={"400px"}>
       <InputGroup>
         <Input
           type="text"

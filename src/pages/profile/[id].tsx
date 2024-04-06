@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next";
 import { Film, People, Starship } from "@/types";
 import { fetchPerson, fetchFilm, fetchStarship } from "@/utils/api";
 import { getIdFromUrl } from "@/utils";
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 const ProfilePage = ({
@@ -17,6 +18,7 @@ const ProfilePage = ({
 
   return (
     <>
+      <Header />
       <Footer />
     </>
   );

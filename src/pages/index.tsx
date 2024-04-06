@@ -1,10 +1,10 @@
-import { SearchBar } from "@/components/SearchBar";
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <SearchBar />
+      <Header />
       <Footer />
     </>
   );
