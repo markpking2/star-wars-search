@@ -39,6 +39,7 @@ npm run test:integration
 ### E2E Tests
 ```sh
 npm run test:e2e
+# may have to run npx playwright install first
 ```
 
 ## Data Modeling
