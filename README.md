@@ -16,8 +16,6 @@
 
 To get started and run the app, follow the commands below:
 
-
-
 ### Running the app on [http://localhost:3000](http://localhost:3000)
 
 ```sh
@@ -42,3 +40,9 @@ npm run test:integration
 ```sh
 npm run test:e2e
 ```
+
+## Data Modeling
+### DynamoDB Example Schema
+View the [Example DynamoDB Schema](./modeling/dynamodb.md)
+### GraphQL Schema
+View the [Example GraphQL Schema](./modeling/schema.graphql)

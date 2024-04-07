@@ -1,0 +1,106 @@
+type Query {
+ getFilm(id: ID!): Film
+ listFilms(limit: Int, nextToken: String): FilmConnection
+ getPerson(id: ID!): Person
+ listPeople(limit: Int, nextToken: String): PersonConnection
+}
+
+type Mutation {
+ createFilm(input: CreateFilmInput!): Film
+ updateFilm(id: ID!, input: UpdateFilmInput!): Film
+ deleteFilm(id: ID!): DeleteFilmOutput
+ createPerson(input: CreatePersonInput!): Person
+ updatePerson(id: ID!, input: UpdatePersonInput!): Person
+ deletePerson(id: ID!): DeletePersonOutput
+}
+
+type Film {
+ id: ID!
+ date_created: String
+ date_updated: String
+ title: String
+ episode_id: Int
+ opening_crawl: String
+ director: String
+ producer: String
+ release_date: String
+ characters: [Person]
+}
+
+type Person {
+ id: ID!
+ date_created: String
+ date_updated: String
+ name: String
+ birth_year: String
+ eye_color: String
+ gender: String
+ hair_color: String
+ height: Float
+ films: [Film]
+}
+
+type FilmConnection {
+ items: [Film]
+ nextToken: String
+}
+
+type PersonConnection {
+ items: [Person]
+ nextToken: String
+}
+
+input CreateFilmInput {
+ id: ID!
+ title: String
+ episode_id: Int
+ opening_crawl: String
+ director: String
+ producer: String
+ release_date: String
+ characters: [ID]
+}
+
+input UpdateFilmInput {
+ title: String
+ episode_id: Int
+ opening_crawl: String
+ director: String
+ producer: String
+ release_date: String
+ characters: [ID]
+}
+
+type DeleteFilmOutput {
+ id: ID!
+}
+
+input CreatePersonInput {
+ id: ID!
+ name: String
+ birth_year: String
+ eye_color: String
+ gender: String
+ hair_color: String
+ height: Float
+ films: [ID]
+}
+
+input UpdatePersonInput {
+ name: String
+ birth_year: String
+ eye_color: String
+ gender: String
+ hair_color: String
+ height: Float
+ films: [ID]
+}
+
+type DeletePersonOutput {
+ id: ID!
+}
+
+schema {
+ query: Query
+ mutation: Mutation
+}
